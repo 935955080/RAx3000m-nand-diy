@@ -6,7 +6,7 @@
 
 
 ##配置IP
-sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.8.1/192.168.10.1/g' package/base-files/files/bin/config_generate
 
 ##
 rm -rf ./feeds/extraipk/theme/luci-theme-argon-18.06
@@ -32,11 +32,11 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-nginx/Makefile
 
 ##更改主机名
-sed -i "s/hostname='.*'/hostname='MzWrt'/g" package/base-files/files/bin/config_generate
+sed -i "s/hostname='.*'/hostname='RAX3000m-wrt'/g" package/base-files/files/bin/config_generate
 
 ##加入作者信息
-sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='MzWrt-$(date +%Y%m%d)'/g"  package/base-files/files/etc/openwrt_release
-sed -i "s/DISTRIB_REVISION='*.*'/DISTRIB_REVISION=' By Mz'/g" package/base-files/files/etc/openwrt_release
+sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='RAX3000m-wrt-$(date +%Y%m%d)'/g"  package/base-files/files/etc/openwrt_release
+sed -i "s/DISTRIB_REVISION='*.*'/DISTRIB_REVISION=' By cniori'/g" package/base-files/files/etc/openwrt_release
 cp -af feeds/extraipk/patch/diy/banner-MZwrt  package/base-files/files/etc/banner
 
 sed -i "2iuci set istore.istore.channel='MZ_wrt'" package/emortal/default-settings/files/99-default-settings
